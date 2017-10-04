@@ -1,0 +1,89 @@
+<!--
+      index.html for GifTastic
+      BootCamp at UNC Homework Assignment #6
+     October 7, 2017
+      Bo Slott
+ -->
+
+<!DOCTYPE html>
+<html lang="en-us" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" contents="width=device-width, initial-scale=1" />
+
+  <!-- Reset All Styles -->
+  <link rel="stylesheet" href="assets/css/reset.css" />
+
+  <!-- Bootstrap 3.3.7 CDN -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+   <title></title>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="row topics-sign-row">
+      <div class="col-xs-6 col-xs-offset-3 topics-sign">
+        <h1>Choose a Topic</h1>
+      </div>
+    </div>
+
+    <div class="row choose-options">
+
+      <!-- <div class="col-xs-4 new-topic-sign-column">
+        <img class="new-topic-sign" src="assets/images/woodenSignAndPost.png" alt="Create New Topic" />
+        <h2>Create a Topic</h2>
+      </div> -->
+
+      <div class="col-xs-4 ">
+        <div class="row new-topic-header">
+          <h2>Enter New Topic</h2>
+        </div>
+        <div class="row new-topic-form">
+          <form>
+            <input type="text" name="newTopicInput" class="new-topic-input" />
+            <button class="new-topic-sub-btn">Click It</button>
+          </form>
+        </div>
+
+          <!-- <p><span id="newTopic" state="btn"></span></p> -->
+
+      </div>
+
+      <div class="col-xs-8  giftastic">
+        <div class="row topic-options">
+          <p><span id="topicOptions"></span></p>
+        </div>
+        <div class="row gifs-display">
+          <p><span id="gifDisp"></span></p>
+        </div>
+      </div>
+
+    </div>  <!-- Close choose-options -->
+
+    <div class="row gifs">
+
+    </div>
+
+  </div>  <!-- Close container -->
+
+
+
+
+
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- Bootstrap javascript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!-- App JavaScript sheet -->
+  <script src="assets/javascript/app.js"></script>
+
+ </body>
+ </html>
