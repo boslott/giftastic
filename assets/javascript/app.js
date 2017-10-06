@@ -13,10 +13,11 @@ function Giftastic() {
   this.topics = ["swimming", "cycling", "running", "triathlon"];
   this.currentTopicIndex;
 
-  this.renderTopicBtns = function() {
+  this.renderTopicBtns = function(appObj) {
+    var appObj = appObj;
     $("#topicOptions").empty();
 
-    for(var i=0; i<this.topics.length; i++) {
+    for(var i=0; i<appObj.topics.length; i++) {
       var newBtn = $("<button></button>");
       newBtn.addClass("btn btn-default topic-btns");
       newBtn.attr("value", i);
@@ -55,7 +56,13 @@ function Giftastic() {
   this.renderGifs = function(response) {
     var response = response;
     var gifDisp = $("#gifDisp");
+    $(".gifs-display").show();
     gifDisp.empty();
+
+    newHeader = $("<h2></h2>");
+    newHeader.addClass("gifs-display-header")
+    newHeader.text("Cick Image To Animate");
+    gifDisp.append(newHeader);
 
     for(var i=0; i<10; i++) {
       var imageUrl = response.data[i].images.fixed_height_still.url;
@@ -105,38 +112,38 @@ function Giftastic() {
     });
   };
 
-  this.renderNewTopicForm = function() {
-    $("#newTopic").empty();
-    var newForm = $("<form></form>");
+  // this.renderNewTopicForm = function() {
+  //   $("#newTopic").empty();
+  //   var newForm = $("<form></form>");
+  //
+  //   var newInput = $("<input />");
+  //   newInput.attr({
+  //     "type":"text",
+  //     "name":"new-topic-input"
+  //   });
+  //   newForm.append(newInput);
+  //
+  //   var newBtn = $("<button></button>");
+  //   newBtn.addClass("new-topic-sub-btn");
+  //   newForm.append(newBtn);
+  //
+  //   $("#newTopic").append(newForm);
+  // };
 
-    var newInput = $("<input />");
-    newInput.attr({
-      "type":"text",
-      "name":"new-topic-input"
-    });
-    newForm.append(newInput);
-
-    var newBtn = $("<button></button>");
-    newBtn.addClass("new-topic-sub-btn");
-    newForm.append(newBtn);
-
-    $("#newTopic").append(newForm);
-  };
-
-  this.renderNewTopicButton = function(appObj) {
-    var appObj = appObj
-    var newTopic = $("#newTopic");
-    newTopic.empty();
-    var newBtn = $("<button></button>");
-    newBtn.addClass("new-topic-btn");
-    newBtn.text("New Topic");
-
-    newTopic.append(newBtn);
-
-    newBtn.on("click",function(){
-      appObj.renderNewTopicForm();
-    });
-  };
+  // this.renderNewTopicButton = function(appObj) {
+  //   var appObj = appObj
+  //   var newTopic = $("#newTopic");
+  //   newTopic.empty();
+  //   var newBtn = $("<button></button>");
+  //   newBtn.addClass("new-topic-btn");
+  //   newBtn.text("New Topic");
+  //
+  //   newTopic.append(newBtn);
+  //
+  //   newBtn.on("click",function(){
+  //     appObj.renderNewTopicForm();
+  //   });
+  // };
 
   this.newTopic = function(appObj) {
     var appObj = appObj;
@@ -167,21 +174,26 @@ function Giftastic() {
     var appObj = appObj;
     var newTop = newTop;
     appObj.topics.push(newTop);
-    appObj.renderTopicBtns();
+    appObj.renderTopicBtns(appObj);
     appObj.chooseTopic(appObj);
   };
 
   this.resetTopics = function(appObj) {
-    location.reload();
+    var appObj = appObj;
+    $(".gifs-display").hide();
+    // location.reload();
     // var appObj = appObj;
     // $(".gifs-display").empty();
     //
-    // for(var i=3; i<appObj.topics.length;i++) {
-    //   appObj.topics.pop();
-    // }
-    //
-    // appObj.renderTopicBtns();
-    // appObj.chooseTopic(appObj);
+    var len = appObj.topics.length;
+
+    for(var i=0; i<len-4; i++) {
+      console.log("topics length = " + len);
+      appObj.topics.pop();
+    }
+
+    appObj.renderTopicBtns(appObj);
+    appObj.chooseTopic(appObj);
   };
 
 }
@@ -192,7 +204,7 @@ $(document).ready(function() {
 var gifApp = new Giftastic();
 
 gifApp.newTopic(gifApp);
-gifApp.renderTopicBtns();
+gifApp.renderTopicBtns(gifApp);
 gifApp.chooseTopic(gifApp);
 
 })
