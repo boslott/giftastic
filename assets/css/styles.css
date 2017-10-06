@@ -17,6 +17,7 @@ font-size: 62.5%;
     background-image: url("../images/stoneWallBG.jpg");
     background-size: 100%;
     z-index: -1;
+    box-sizing: border-box;
 }
 
 /*  Navbar */
@@ -119,15 +120,52 @@ font-size: 62.5%;
   }
 
   .new-topic-box {
-    background-color: #e8800c;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-style: solid;
+    border-width: 0.15rem;
+    border-color: #e8800c;
+    border-radius: 5%;
+    text-align: center;
+    margin-top: 2rem;
   }
 
   .new-topic-header h2 {
-    width: 60%;
+    width: 70%;
+    padding-bottom: 1rem;
     font-size: 3rem;
     color: #E8800C;
-    text-shadow: 0.15rem 0.12rem 0.15rem #fff;
+    text-shadow: 0.1rem 0.1rem 0.1rem #000;
     font-weight: bold;
+    margin: 1rem auto 2rem;
+    border-style: solid;
+    border-bottom-width: 0.1rem;
+    border-color: rgba(255,255,255,0.9);
+  }
+
+  .new-topic-form input {
+    margin-bottom: 2rem;
+    border-style: solid;
+    border-width: 0.12rem;
+    border-color: #000;
+    border-radius: 5%;
+  }
+
+  .new-topic-sub-btn {
+    margin: 2rem 1rem;
+    background-color: #fff;
+    color: #e8800c;
+    font-weight: bold;
+    font-size: 1.8rem;
+    border-style: solid;
+    border-color: #e8800c;
+    border-width: 0.15rem;
+    border-radius: 10%;
+  }
+
+  .new-topic-sub-btn:hover {
+    background-color: #3CB7FF;
+    color: #AB6809;
+    border-color: #e8800c;
   }
 
   .gifs-display {
@@ -138,8 +176,25 @@ font-size: 62.5%;
     margin: 0 4rem 5rem;
   }
 
+  .gif-boxes {
+    display:flex;
+    justify-content: center;
+  }
+
   .gifImgs {
     margin: 2rem 1rem;
+  }
+
+  .ratings {
+    background-color: #fff;
+    color: #e8800c;
+    bottom: 4rem;
+    width: 50%;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 0.1rem 0;
+    border-color: #e8800c;
+    padding: 0.1rem;
   }
 
 
