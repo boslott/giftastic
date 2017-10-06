@@ -41,7 +41,7 @@ function Giftastic() {
 
   this.callAJAX = function(appObj) {
     var appObj = appObj;
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + appObj.topics[appObj.currentTopicIndex] + "&api_key=BDidNuCitvrSXbXrixCQQ6kVMKjMkMHD&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + appObj.topics[appObj.currentTopicIndex] + "&api_key=BDidNuCitvrSXbXrixCQQ6kVMKjMkMHD&limit=10";
 
     $.ajax({
       url: queryURL,
